@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Симулятор Копейки</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hud" style="display:none">
+  <div id="score">Очки: <span id="scoreVal">0</span></div>
+  <div id="speedo"><span id="speedVal">0</span><small> км/ч</small></div>
+  <div id="hint">WASD — движение · SPACE — ручник · SHIFT — нитро · C — камера · ESC — меню</div>
+</div>
+
+<div id="menu" class="screen">
+  <h1>СИМУЛЯТОР КОПЕЙКИ</h1>
+  <div class="btns">
+    <button id="btn-play">ИГРАТЬ</button>
+    <button id="btn-upgrade">ПРОКАЧКА</button>
+    <button id="btn-settings">НАСТРОЙКИ</button>
+  </div>
+</div>
+
+<div id="upgradeScreen" class="screen hidden">
+  <div class="panel">
+    <h2>ПРОКАЧКА</h2>
+    <div id="upgradeList"></div>
+    <div class="panel-footer">
+      <span>Очки: <b id="upgScore">0</b></span>
+      <button id="btn-upgrade-back">НАЗАД</button>
+    </div>
+  </div>
+</div>
+
+<div id="settingsScreen" class="screen hidden">
+  <div class="panel">
+    <h2>НАСТРОЙКИ</h2>
+    <div class="row">Громкость: <input id="setVolume" type="range" min="0" max="100" value="50"></div>
+    <div class="row">Качество:
+      <select id="setQuality">
+        <option value="low">Низкое</option>
+        <option value="med" selected>Среднее</option>
+        <option value="high">Высокое</option>
+      </select>
+    </div>
+    <div class="panel-footer">
+      <button id="btn-settings-back">НАЗАД</button>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module" src="game.js"></script>
+</body>
+</html>
